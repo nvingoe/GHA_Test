@@ -1,20 +1,20 @@
-name: Example2.NetFramework.CI
+name: NetFrameWork.Legacy.CI
 
 on: [push]
-
+ 
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v1
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 2.2.108
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
-    - name: And then we test it
-      run: dotnet test --verbosity normal
-      
+    - name: Setup Nuget.exe
+      uses: warrenbuckley/Setup-Nuget@v1
+    - name: restore packages
+      run: |
+        nuget sources add -name "private-packages" -Source https://arx-nuget.azurewebsites.net/nuget
+        nuget restore AreasOfInterest
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Build with MSBuild
+      run: msbuild AreasOfInterest -p:Configuration=Release
