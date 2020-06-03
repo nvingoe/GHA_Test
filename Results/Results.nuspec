@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Fdb.Rx.AreasOfInterest.Results</id>
+    <version>$version$</version>
+    <authors>First Databank</authors>
+    <description>Library package for Rx Areas Of Interest results</description>
+  </metadata>
+  <files>
+    <file src="bin\Fdb.Rx.AreasOfInterest.Results.dll" target="lib\net461" />
+  </files>
+</package>

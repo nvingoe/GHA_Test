@@ -1,0 +1,35 @@
+﻿using System;
+using System.Data;
+using System.Linq;
+using Fdb.Rx.Persistence.Dapper;
+using Fdb.Rx.Platform.Patients;
+
+namespace Fdb.Rx.AreasOfInterest
+{
+    public interface IRunAreasOfInterest
+    {
+        AoiEngineResult Run(Patient Patient);
+    }
+
+    public class Engine : IRunAreasOfInterest
+    {
+        private IDb Db { get; }
+
+        public Engine(IDb db)
+        {
+            Db = db;
+        }
+
+        public AoiEngineResult Run(Patient patient)
+        {
+<<<<<<< Updated upstream
+            return new AoiEngineResult(patient.Drugs
+                    .Where(d => d.AuthorisationDate.HasValue && d.AuthorisationDate >= Date.Today().PlusDays(-28) && d.AuthorisationDate <= Date.Today().PlusDays(28))
+                    .Select(d => new Drug(d.ProductCode,
+                        GetProductName(d.ProductCode, patient.DrugTerminology), d.AuthorisationDate.Value)));
+=======
+            return Db.Query("Analyse", grid => ResultFactory.Create(grid.Read<Drug>(), grid.Read<AoiMatch>()), new { Drugs = patient.ToReauthorisationDrugsTable(), patient.ClinicalTerminology, ClinicalEntries = patient.ClinicalEntries.ToTable() });
+>>>>>>> Stashed changes
+        }
+    }
+}
