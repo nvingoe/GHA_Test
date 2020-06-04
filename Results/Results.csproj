@@ -1,59 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F048ED0B-90AD-41E4-AE09-99124490D83F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Fdb.Rx.AreasOfInterest</RootNamespace>
     <AssemblyName>Fdb.Rx.AreasOfInterest.Results</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <TargetFramework>net461</TargetFramework>
+    <AssemblyTitle>Results</AssemblyTitle>
+    <Product>Results</Product>
+    <Description>Library package for Rx Areas Of Interest results</Description>
+    <Copyright>Copyright ©  2019</Copyright>
+    <Version>1.0.0.0</Version>
+    <OutputPath>bin\</OutputPath>
+    <Authors>First Databank</Authors>
+    <PackageId>Fdb.Rx.AreasOfInterest.Results</PackageId>
+    <PackageTags>Library</PackageTags>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ConditionFilterMatch.cs" />
-    <Compile Include="AreaOfInterestMatch.cs" />
-    <Compile Include="ConditionGroupResult.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="Fdb.Rx.Common.Core" Version="1.1.876" />
+    <PackageReference Include="Fdb.Rx.Common.Primitives" Version="1.1.876" />
+    <PackageReference Include="NodaTime" Version="2.4.7" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="Results.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Fdb.Rx.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fdb.Rx.Common.Core.1.1.876\lib\net461\Fdb.Rx.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Fdb.Rx.Primitives, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fdb.Rx.Common.Primitives.1.1.876\lib\net461\Fdb.Rx.Primitives.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="NodaTime, Version=2.4.7.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NodaTime.2.4.7\lib\net45\NodaTime.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
