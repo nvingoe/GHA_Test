@@ -15,6 +15,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
+    - name: add Nuget source
+      run: dotnet nuget add source https://arx-nuget.azurewebsites.net/nuget
     - name: Install dependencies
       run: dotnet restore
     - name: Build
