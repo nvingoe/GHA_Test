@@ -13,7 +13,7 @@ jobs:
     - name: restore packages
       run: |
         nuget sources add -name "private-packages" -Source https://arx-nuget.azurewebsites.net/nuget
-        nuget restore AreasOfInterest
+        nuget restore AreasOfInterest.sln
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build with MSBuild
