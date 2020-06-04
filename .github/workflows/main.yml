@@ -17,4 +17,4 @@ jobs:
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build with MSBuild
-      run: msbuild AreasOfInterest -p:Configuration=Release
+      run: msbuild AreasOfInterest.sln -p:Configuration=Release
