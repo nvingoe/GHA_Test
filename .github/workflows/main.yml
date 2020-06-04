@@ -18,3 +18,6 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build with MSBuild
       run: msbuild AreasOfInterest.sln -p:Configuration=Release
+    - name: Run the tests
+      run: dotnet test --verbosity normal
+    
