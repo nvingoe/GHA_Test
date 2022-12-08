@@ -28,7 +28,7 @@
     <PackageReference Include="Fdb.Rx.Common.Testing.Dapper" Version="1.1.876" />
     <PackageReference Include="Fdb.Rx.Common.Testing.Primitives" Version="1.1.876" />
     <PackageReference Include="Fdb.Rx.Platform.Patients" Version="1.0.1688" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="NodaTime" Version="2.4.7" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
